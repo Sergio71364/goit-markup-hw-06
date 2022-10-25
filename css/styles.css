@@ -33,7 +33,7 @@ li {
   --light-background-color: #c4c4c4;
   --lighter-background-color: #f5f4fa;
   --line-color: #ececec;
-  --transition-cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-cubic: 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -65,17 +65,68 @@ body {
   margin-right: 93px;
 }
 
-.header .icon {
-  margin-right: 10px;
+.icon {
+  display: block;
   fill: currentColor;
 }
 
-.icon {
-  display: block;
+.header .icon {
+  margin-right: 10px;
 }
 
 .footer .logo {
   color: var(--primary-white-color);
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-input {
+  width: 358px;
+  height: 50px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  margin-right: 12px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: transparent;
+}
+
+.footer-input::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-input:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.signup-button {
+  font-size: 16px;
+  line-height: 1.88;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  padding: 10px 28px;
+  color: var(--primary-white-color);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.signup-button .icon {
+  margin-left: 10px;
 }
 
 .logo span {
@@ -180,8 +231,9 @@ body {
 
 .footer-wrapper {
   display: flex;
-  gap: 70px;
   align-items: baseline;
+  justify-content: space-between;
+  gap: 70px;
 }
 
 .footer .address {
@@ -205,6 +257,21 @@ body {
 .footer .link:hover,
 .footer .link:focus {
   color: var(--accent-color);
+}
+
+.signup-form {
+  display: flex;
+}
+
+.footer-label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
 }
 
 .hidden {
@@ -245,7 +312,8 @@ body {
   height: auto;
 }
 
-.social .title {
+.social .title,
+.form-title {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
@@ -253,8 +321,8 @@ body {
   margin-bottom: 20px;
 }
 
-.social .icon {
-  fill: var(--primary-white-color);
+.social {
+  color: var(--primary-white-color);
 }
 
 .round-wrapper {
@@ -279,7 +347,8 @@ body {
 }
 
 .footer .round-wrapper {
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--primary-white-color);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .social-wrap {
@@ -485,17 +554,6 @@ body {
 
 .team .details {
   padding: 30px 32px;
-}
-
-.team .icon {
-  fill: currentColor;
-  /* transition: fill var(--transition-cubic); */
-}
-
-.clients .icon {
-  fill: currentColor;
-  /* fill: var(--greyish-background-color); */
-  transition: fill var(--transition-cubic);
 }
 
 .client-list-wrapper {
