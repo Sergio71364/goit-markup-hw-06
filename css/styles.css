@@ -95,11 +95,14 @@ body {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   margin-right: 12px;
+  margin-top: 20px;
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
+  outline: none;
   color: rgba(255, 255, 255, 0.6);
   background-color: transparent;
+  transition: border-color var(--transition-cubic);
 }
 
 .footer-input::placeholder {
@@ -214,6 +217,7 @@ body {
 }
 
 .button {
+  display: block;
   font-family: inherit;
   font-size: 16px;
   letter-spacing: 0.06em;
@@ -265,7 +269,7 @@ body {
 
 .signup-form {
   display: flex;
-  align-items: center;
+  align-items: end;
 }
 
 .footer-label {
@@ -279,7 +283,7 @@ body {
   color: var(--primary-white-color);
 }
 
-.hidden {
+.visually-hidden {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -318,11 +322,15 @@ body {
 }
 
 .social .title,
-.form-title {
+.signup-form-title {
   font-size: 14px;
+  font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
   color: var(--primary-white-color);
+}
+
+.social .title {
   margin-bottom: 20px;
 }
 
@@ -458,6 +466,11 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: color var(--transition-cubic);
+}
+
+.modal-close-button:hover {
+  color: var(--accent-color);
 }
 
 .hero-form-title {
@@ -470,10 +483,6 @@ body {
   margin-bottom: 30px;
 }
 
-.button-holder {
-  text-align: center;
-}
-
 .hero-input {
   font-size: 12px;
   line-height: 1.17;
@@ -484,6 +493,7 @@ body {
   width: 100%;
   color: var(--primary-text-color);
   outline: none;
+  transition: border-color var(--transition-cubic);
 }
 
 .hero-input::placeholder {
@@ -528,19 +538,31 @@ body {
   color: var(--accent-color);
 }
 
-.checkbox-label::after {
-  content: '';
+.checkbox-off,
+.checkbox-on {
   position: absolute;
   top: 50%;
   left: 13px;
   transform: translateY(-50%);
   width: 16px;
   height: 15px;
-  background-image: url('../images/originals/checkbox-off.svg');
+  /* background-image: url('../images/originals/checkbox-off.svg'); */
 }
 
-.checkbox:checked + .checkbox-label::after {
-  background-image: url('../images/originals/checkbox-on.svg');
+.checkbox-on {
+  visibility: hidden;
+}
+
+.checkbox-off {
+  visibility: visible;
+}
+
+.checkbox:checked + .checkbox-on {
+  visibility: visible;
+}
+
+.checkbox:checked ~ .checkbox-off {
+  visibility: hidden;
 }
 
 .hero-field-icon {
@@ -549,6 +571,7 @@ body {
   transform: translateY(-50%);
   left: 15px;
   color: var(--title-text-color);
+  transition: color var(--transition-cubic);
 }
 
 .hero-field-name {
