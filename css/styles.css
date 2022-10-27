@@ -23,7 +23,8 @@ li {
   margin: 0;
 }
 
-label {
+label,
+input {
   display: block;
 }
 
@@ -37,7 +38,7 @@ label {
   --light-background-color: #c4c4c4;
   --lighter-background-color: #f5f4fa;
   --line-color: #ececec;
-  --transition-cubic: 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -225,6 +226,7 @@ body {
   border: none;
   border-radius: 4px;
   outline: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .button:hover {
@@ -532,6 +534,7 @@ body {
   padding-left: 36px;
   color: var(--primary-text-color);
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .checkbox-label a {
@@ -550,19 +553,21 @@ body {
 }
 
 .checkbox-on {
-  visibility: hidden;
-}
-
-.checkbox-off {
-  visibility: visible;
+  fill: transparent;
+  transition: fill var(--transition-cubic);
 }
 
 .checkbox:checked + .checkbox-on {
-  visibility: visible;
+  fill: var(--accent-color);
+}
+
+.checkbox-off {
+  fill: var(--title-text-color);
+  transition: fill var(--transition-cubic);
 }
 
 .checkbox:checked ~ .checkbox-off {
-  visibility: hidden;
+  fill: transparent;
 }
 
 .hero-field-icon {
