@@ -564,6 +564,10 @@ body {
   border-color: transparent;
 }
 
+.checkbox:focus + .checkbox-icon {
+  border-color: var(--accent-color);
+}
+
 .hero-field-icon {
   position: absolute;
   top: 50%;
