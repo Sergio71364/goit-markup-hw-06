@@ -541,33 +541,22 @@ body {
   color: var(--accent-color);
 }
 
-.checkbox-off,
-.checkbox-on {
+.checkbox-icon {
   position: absolute;
   top: 50%;
   left: 13px;
   transform: translateY(-50%);
-  width: 16px;
-  height: 15px;
-  /* background-image: url('../images/originals/checkbox-off.svg'); */
+  fill: var(--primary-white-color);
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  transition: fill var(--transition-cubic), background-color var(--transition-cubic),
+    border-color var(--transition-cubic);
 }
 
-.checkbox-on {
-  fill: transparent;
-  transition: fill var(--transition-cubic);
-}
-
-.checkbox:checked + .checkbox-on {
-  fill: var(--accent-color);
-}
-
-.checkbox-off {
-  fill: var(--title-text-color);
-  transition: fill var(--transition-cubic);
-}
-
-.checkbox:checked ~ .checkbox-off {
-  fill: transparent;
+.checkbox:checked ~ .checkbox-icon {
+  fill: var(--primary-white-color);
+  background-color: var(--accent-color);
+  border-color: transparent;
 }
 
 .hero-field-icon {
