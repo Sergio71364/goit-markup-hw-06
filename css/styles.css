@@ -550,8 +550,11 @@ body {
   color: var(--primary-text-color);
 }
 
-.checkbox-label {
+.checkbox-field {
   position: relative;
+}
+
+.checkbox-label {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -587,9 +590,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  fill: var(--primary-white-color);
 }
 
-.checkbox-label:focus-within .square {
+.checkbox:focus + .square {
   border-color: var(--accent-color);
 }
 

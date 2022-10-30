@@ -452,7 +452,7 @@
         </form>
       </div>
     </footer>
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop is-hidden1" data-modal>
       <div class="modal">
         <form class="hero-form" name="contact-form">
           <h2 class="hero-form-title">Залиште свої дані, ми вам передзвонимо</h2>
@@ -485,7 +485,7 @@
             ></textarea>
             <span class="hero-field-name">Коментар</span>
           </label>
-          <label class="checkbox-label" for="checkbox">
+          <div class="checkbox-field">
             <input
               class="checkbox visually-hidden"
               name="checkbox"
@@ -498,8 +498,11 @@
                 <use href="./images/icons.svg#check-small"></use>
               </svg>
             </div>
-            Погоджуюся з розсилкою та приймаю <a href="#"> Умови договору</a>
-          </label>
+            <label class="checkbox-label" for="checkbox">
+              Погоджуюся з розсилкою та приймаю
+              <a href="#"> Умови договору</a>
+            </label>
+          </div>
           <button class="button" type="submit">Відправити</button>
         </form>
         <div class="modal-close-button" data-modal-close>
